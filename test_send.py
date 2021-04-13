@@ -1,6 +1,6 @@
 import pika
 
-credentials = pika.PlainCredentials('user', 'password')
+credentials = pika.PlainCredentials('username', 'password')
 parameters = pika.ConnectionParameters('192.168.0.3', credentials=credentials) 
 connection = pika.BlockingConnection(parameters)
 channel = connection.channel()
