@@ -46,7 +46,7 @@ def extract_ip():
 
 
 def send_messege(ip):
-    credentials = pika.PlainCredentials("postman", "11362266")
+    credentials = pika.PlainCredentials("username", "password")
     parameters = pika.ConnectionParameters(ip, credentials=credentials) 
     connection = pika.BlockingConnection(parameters)
     channel = connection.channel()
