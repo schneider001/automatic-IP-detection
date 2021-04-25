@@ -6,7 +6,7 @@ def callback(ch, method, properties, body):
 
 
 def receive_messege():
-    credentials = pika.PlainCredentials("postman", "11362266")
+    credentials = pika.PlainCredentials("username", "password")
     parameters = pika.ConnectionParameters("localhost", credentials=credentials) 
     connection = pika.BlockingConnection(parameters)
     channel = connection.channel()
