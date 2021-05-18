@@ -1,7 +1,6 @@
 #!/usr/bin/python
 
 import scapy.all as scapy
-import base64
 import binascii
 import pika
 
