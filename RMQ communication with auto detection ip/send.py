@@ -33,15 +33,12 @@ class Sniffer(object):
     def extract_ip(self):
         rmq_index = self.ack_paket.rfind("e104")
         
-        hex_ip = []
-        ip = []
-
-        for i in range(4 + rmq_index, 12 + rmq_index, 2):
-           hex_ip.append(self.ack_paket[i:i+2])
-        for byte in hex_ip:
-           ip.append(str(int(byte, 16)))
-        row_ip = ".".join(ip)
-        return row_ip
+        hex_ip_row = self.ack_paket[4+rmq_index:12+rmq_index]
+        split_hex_ip = map("".join, zip(*[iter(hex_ip_row)]*2))
+        split_dec_ip = map(lambda byte : str(int(byte, 16)), split_hex_ip)
+        dec_ip_row = ".".join(split_dec_ip)
+        
+        return dec_ip_row
 
 
 def send_messege(ip):
