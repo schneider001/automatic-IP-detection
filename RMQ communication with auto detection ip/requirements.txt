@@ -1,4 +1,4 @@
-The program uses the following modules:
+The send.py program uses the following modules:
 scapy - for working with dhcp packages,
 binascii - to represent the package in hexadecimal,
 pika - to send a message to the RMQ server
